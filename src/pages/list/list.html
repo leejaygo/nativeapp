@@ -1,0 +1,25 @@
+<ion-header>
+	<ion-navbar>
+	    <ion-title>
+	      Ionic Blank
+	    </ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+	<ion-searchbar
+		  [(ngModel)]="myInput"
+		  [showCancelButton]="shouldShowCancel"
+		  [type]="'search'"
+		  [placeholder]="'请输入搜索内容'"
+		  (ionInput)="onInput($event)"
+		  (ionCancel)="onCancel($event)">
+	</ion-searchbar>
+	<ul class="fylist" *ngIf="ifShowItems">
+		<li *ngFor="let item of lists" [attr.data-val]="item.title" (click)="itemClick($event)">{{item.title}}</li>
+	</ul>
+		<ion-list>
+	    <ion-item>Angola</ion-item>
+	    <ion-item>Argentina</ion-item>
+		</ion-list>
+	<button ion-button block>Default</button>
+</ion-content>
